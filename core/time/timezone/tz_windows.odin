@@ -282,9 +282,6 @@ _region_load :: proc(reg_str: string, allocator := context.allocator) -> (out_re
 	if !abbrevs_ok {
 		return
 	}
-	if abbrevs.std == "UTC" && abbrevs.dst == abbrevs.std {
-		return nil, true
-	}
 
 	key_base := `SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones`
 	tz_key := strings.join({key_base, wintz_name}, "\\", allocator = allocator)
