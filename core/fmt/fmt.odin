@@ -2451,7 +2451,6 @@ fmt_named :: proc(fi: ^Info, v: any, verb: rune, info: runtime.Type_Info_Named) 
 			write_padded_number(fi, i64(s), 2)
 			io.write_byte(fi.writer, '.', &fi.n)
 			write_padded_number(fi, (ns), 9)
-			io.write_string(fi.writer, " +0000 UTC", &fi.n)
 			return
 		}
 	}
